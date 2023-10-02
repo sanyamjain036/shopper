@@ -9,6 +9,12 @@ const Index = () => {
   const [filter, setFilter] = useState(INITIAL_STATE_FILTER);
   const { data: allProducts } = useSelector((state) => state.store);
 
+  /**
+   * 
+   * @returns filter in required format
+   * @description convert filter object in desired format
+   * 
+   */
   const filteredCollected = () => {
     const collectedTrueKeys = {
       color: [],
@@ -26,6 +32,13 @@ const Index = () => {
 
     return collectedTrueKeys;
   };
+
+  /**
+   * 
+   * @param {FiltersCollected Format} filters 
+   * @returns sub filtered products 
+   * @description apply only side filters
+   */
 
   const multiPropsFilter = (filters) => {
     const filterKeys = Object.keys(filters);
@@ -53,6 +66,11 @@ const Index = () => {
     });
   };
 
+/**
+ * 
+ * @returns filtered products 
+ * @description side filters and search filter implementation
+ */
   const filteredProducts = () => {
     const subFilteredProducts = multiPropsFilter(filteredCollected());
     return subFilteredProducts.filter((product) => {

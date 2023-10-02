@@ -5,6 +5,12 @@ import { addItem } from "../features/storeSlice";
 function Product({ item }) {
   const dispatch = useDispatch();
 
+  /**
+   * 
+   * @param {Product Item} item 
+   * @returns void
+   * @description function to handle "Add to cart" event
+   */
   const addItemToCart = (item) => {
     if (item.quantity === 0) {
       alert("No Product left!");

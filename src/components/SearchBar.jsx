@@ -3,6 +3,11 @@ import React, { useRef } from "react";
 const SearchBar = ({ setFilter }) => {
   const inputRef = useRef();
 
+  /**
+   * 
+   * @param {EventObject} e 
+   * @description function to handle onSubmit event for search input
+   */
   const handleSearch = (e) => {
     e.preventDefault();
     setFilter((prev) => {
@@ -12,6 +17,7 @@ const SearchBar = ({ setFilter }) => {
       };
     });
   };
+
   return (
     <form onSubmit={handleSearch} className="flex items-center py-3">
       <label htmlFor="simple-search" className="sr-only">
