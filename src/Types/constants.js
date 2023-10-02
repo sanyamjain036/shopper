@@ -1,0 +1,22 @@
+export const INITIAL_STATE_FILTER={
+    searchTerm:'',
+    color:{
+        red:false,
+        blue:false,
+        green:false,
+    },
+    gender:{
+        men:false,
+        women:false,
+    },
+    type:{
+        polo:false,
+        hoodie:false,
+        basic:false,
+    },
+    price:{
+        lessThan250:false,
+        between251and450:false,
+        moreThan450:false
+    }
+}
